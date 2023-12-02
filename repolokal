@@ -1,0 +1,15 @@
+#!/bin/bash
+#
+# ==================================================
+cd
+cat > /etc/apt/sources.list <<-END
+deb http://kambing.ui.ac.id/debian/ buster main contrib non-free
+deb http://kambing.ui.ac.id/debian/ buster-updates main contrib non-free
+deb http://kambing.ui.ac.id/debian-security/ buster/updates main contrib non-free
+END
+cd
+sudo apt update
+sleep 1
+sudo apt list --upgradeable
+sleep 1
+sudo apt-get upgrade -y
